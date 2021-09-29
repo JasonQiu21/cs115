@@ -1,0 +1,147 @@
+# map 1
+0 *x** -> E 0   
+0 xE** -> N 1
+0 NE** -> S 2
+
+1 **x* -> W 1
+1 x*W* -> N 0
+1 N*W* -> S 2
+
+2 ***x -> S 2
+2 **xS -> W 1
+2 *xWS -> E 0
+
+# map 2
+# Follow E wall
+0 *x** -> E 3
+0 xE** -> N 0
+0 NEx* -> W 1
+0 NEWx -> S 2
+
+# Follow N wall
+1 x*** -> N 0
+1 N*x* -> W 1
+1 N*Wx -> S 2
+1 NxWS -> E 3
+
+# Follow W wall
+2 **x* -> W 1
+2 **Wx -> S 2
+2 *xWS -> E 3
+2 *EWS -> N 0
+
+# Follow S wall
+3 ***x -> S 2
+3 *x*S -> E 3
+3 xE*S -> N 0
+3 NExS -> W 1
+
+# map 3
+# Initial condition; go as north as possible
+0 x*** -> N 0
+0 NEx* -> W 0
+0 NxW* -> E 0
+0 NEW* -> S 1
+
+# Go one row W
+1 *xx* -> W 1
+1 N*Wx -> S 2
+1 x*WS -> N 3
+1 NxWS -> E 4
+
+# Go all the way down
+2 ***x -> S 2
+2 *xWS -> N 1
+2 *ExS -> W 5
+
+# Go all the way up
+3 x*** -> N 3
+3 NxW* -> S 1
+3 NEx* -> E 5
+
+# Go all the way right
+4 *x** -> E 4
+4 *E** -> W 5
+
+# Go one row W
+5 *xx* -> N 5
+5 NE** -> S 2
+
+# map 4
+# Get to top right corner
+0 x*** -> N 0
+0 N*x* -> W 0
+0 N*W* -> E 1
+
+1 *x** -> E 1
+1 *E** -> W 2 # top left corner edge-case
+
+2 **Wx -> S 2
+2 **WS -> E 3 # bottom left bit edge-case
+2 xxxx -> N 0
+2 Nxxx -> E 4 # all set, start sweeping!
+
+3 *x** -> E 3
+3 *E** -> N 0
+
+# Sweep 1
+4 ***x -> S 4
+4 **xS -> W 5
+4 **WS -> N 5
+
+5 x*** -> N 5
+5 N*x* -> W 4
+5 NxWx -> S 6
+
+6 **x* -> W 4
+6 *xW* -> N 7
+
+# Travel to the right bottom bit
+7 *x** -> E 7
+7 *E*x -> S 7
+7 xExS -> W 8
+
+# Sweep 2
+8 **x* -> W 8
+8 x*W* -> N 9
+8 N*W* -> E 9
+
+9 *x** -> E 9
+9 xE** -> N 8
+9 NExx -> S 10
+
+# Get to bottom left bit
+10 ***x -> S 10
+10 *x*S -> E 11
+10 *E*S -> W 12
+11 *x** -> E 11
+11 *E** -> S 10
+
+# Sweep 3
+12 **x* -> W 12
+12 x*W* -> N 13
+12 N*W* -> E 13
+
+13 *x** -> E 13
+13 xE** -> N 12
+13 NExx -> S 14
+
+# Clean up cases; go to bottom right again
+14 *x** -> E 14
+14 *E*x -> S 14
+
+# Go to top left of the bottom right, then hug wall
+14 xExS -> W 15
+15 **x* -> W 15
+15 **WS -> N 16
+16 x*** -> N 16
+16 N*W* -> E 17
+17 N*** -> E 17
+17 x*** -> N 18
+18 **Wx -> N 18
+18 **x* -> W 18
+18 **WS -> E 19
+
+# Go north, then hug wall
+19 x*** -> N 19
+19 N*** -> W 19
