@@ -42,7 +42,7 @@ def deepReverse(l) -> list:
     '''
     Reverse list l and any lists inside of it (and inside of them, and so on)
     '''
-    if type(l) != list:
+    if not isinstance(l, list):
         return l
     elif l == []:
         return []
