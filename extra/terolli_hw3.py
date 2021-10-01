@@ -14,7 +14,7 @@ CS115 - Hw 3
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 # your code goes here
 
-# function change() from lab 4
+# function change() from lab 3-1
 def change(a: int, coins = [1,5,10,25,50]):
     '''
     Give number of coins to make change for amount a
@@ -88,7 +88,7 @@ def wordsWithScore(dct, scores):
     
     return [dct[0], score(dct[0])] + wordsWithScore(dct[1:], scores)
 
-print(wordsWithScore(Dictionary, scrabbleScores))
+# print(wordsWithScore(Dictionary, scrabbleScores))
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' PROBLEM 2
@@ -103,7 +103,7 @@ def take(n, L):
     if n==0:
         return []
     return [L[0]] + take(n-1, L[1:])
-assert take(3, [1,2,3,4,5,6]) == [1,2,3,4,5,6][0:3], f"{take(3, [1,2,3,4,5,6])}    {[1,2,3,4,5,6][0:3]}"
+# assert take(3, [1,2,3,4,5,6]) == [1,2,3,4,5,6][0:3], f"{take(3, [1,2,3,4,5,6])}    {[1,2,3,4,5,6][0:3]}"
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' PROBLEM 3
@@ -117,4 +117,4 @@ def drop(n, L):
     if n==0:
         return L
     return drop(n-1,L[1:])
-assert drop(3, [1,2,3,4,5,6]) == [1,2,3,4,5,6][3:], f"{drop(3, [1,2,3,4,5,6])}    {[1,2,3,4,5,6][3:]}"
+# assert drop(3, [1,2,3,4,5,6]) == [1,2,3,4,5,6][3:], f"{drop(3, [1,2,3,4,5,6])}    {[1,2,3,4,5,6][3:]}"
