@@ -16,8 +16,8 @@ def pascal_row(n: int):
         return [l[0]+l[1]] + helper(l[1:])
     if n == 0:
         return [1]
-    elif n == 1:
-        return [1,1]
+    # elif n == 1:
+    #     return [1,1]
     return [1] + helper(pascal_row(n-1))
 
 def pascal_triangle(n, triangle=[]):
@@ -25,12 +25,16 @@ def pascal_triangle(n, triangle=[]):
     Return the first n rows of Pascal's Triangle
     '''
     def helper(n, triangle):    
-        if n == 0:
-            triangle.append(pascal_row(n))
+        if n <= 0:
+            if pascal_row(n) not in triangle:
+                triangle.append(pascal_row(n))
             return triangle
-        triangle.append(pascal_row(n))
-        return pascal_triangle(n-1,triangle)
-    return helper(n, triangle)[:-1]
+        if pascal_row(n) not in triangle:
+            triangle.append(pascal_row(n))
+        return helper(n-1,triangle)
+    t = helper(n, triangle)
+    t.sort(key=len)
+    return t
 
 def binom(n, k):
     return math.factorial(n) // math.factorial(k) // math.factorial(n - k)
@@ -45,13 +49,11 @@ def test_pascal_row():
 test_pascal_row()
 
 def test_pascal_triangle():
-    assert pascal_triangle(0) == [1]
-    assert pascal_triangle(1) == [[1],[1,1]]
-    assert pascal_triangle(3) == [[1],[1,1],[1,2,1],[1,3,3,1]]
+    assert pascal_triangle(0) == [[1]], f"{pascal_triangle(0)}"
+    assert pascal_triangle(1) == [[1],[1,1]], f"{pascal_triangle(1)}"
+    assert pascal_triangle(3) == [[1],[1,1],[1,2,1],[1,3,3,1]], f"{pascal_triangle(3)}"
     ll = []
-    for i in range(101):
-        l = []    
-        for i in range(101):
-            l.append(binom(100,i))
-        ll.append(l)
-    assert pascal_triangle(100) == l[:-1], f"{ll}, {pascal_triangle(100)}"
+    for i in range(11):
+        ll.append(pascal_row(i))
+    assert pascal_triangle(10) == ll
+test_pascal_triangle()
