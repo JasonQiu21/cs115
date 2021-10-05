@@ -24,17 +24,10 @@ def pascal_triangle(n, triangle=[]):
     '''
     Return the first n rows of Pascal's Triangle
     '''
-    def helper(n, triangle):    
-        if n <= 0:
-            if pascal_row(n) not in triangle:
-                triangle.append(pascal_row(n))
-            return triangle
-        if pascal_row(n) not in triangle:
-            triangle.append(pascal_row(n))
-        return helper(n-1,triangle)
-    t = helper(n, triangle)
-    t.sort(key=len)
-    return t
+    if n == 0:
+        return [pascal_row(n)]
+    else:
+        return pascal_triangle(n-1) + [pascal_row(n)]
 
 def binom(n, k):
     return math.factorial(n) // math.factorial(k) // math.factorial(n - k)
