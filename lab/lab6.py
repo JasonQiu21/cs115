@@ -25,14 +25,7 @@ def helper(a, b,i=0):
     if a == b[i]:
         return i
     return helper(a, b, i+1)
-def myLen(a):
-    '''
-    Equivalent of len()
-    '''
-    if not a:
-        return 0
-    return 1 + myLen(a[1:])
-    
+
 def LLCS(S1, S2):
     '''
     Return the length of the longest common subsequence (LLCS) of strings S1 and S2; equivalent to len(LCS(S1, S2))
@@ -42,9 +35,9 @@ def LLCS(S1, S2):
         return 0
     if S1[0] in S2:
         index = helper(S1[0], S2)
-        if index+1 == myLen(S2):
+        if index+1 == len(S2):
             use_it = 1 + LLCS(S1[1:], S2[-1])
-        elif index == myLen(S2):
+        elif index == len(S2):
             use_it =  1 +LLCS(S1[1:], "")
         else:
             use_it = 1 + LLCS(S1[1:], S2[index+1:])
@@ -69,14 +62,15 @@ def LCS(S1, S2):
         return ""
     if S1[0] in S2:
         index = helper(S1[0], S2)
-        if index+1 == myLen(S2):
+        if index+1 == len(S2):
             use_it = S1[0] + LCS(S1[1:], S2[-1])
-        elif index == myLen(S2):
+        elif index == len(S2):
             use_it =  S1[0] +LCS(S1[1:], "")
         else:
             use_it = S1[0] + LCS(S1[1:], S2[index+1:])
         lose_it = LCS(S1[1:], S2)
-        return use_it if myLen(use_it)>myLen(lose_it) else lose_it
+        return use_it if len(use_it)>len(lose_it) else lose_it
     return LCS(S1[1:], S2)
+
 assert LCS("helllowo_rld", "!helloabcworld!") == "helloworld", LCS("helllowo_rld", "!helloabcworld!")
 assert len(LCS("helllowo_rld", "!helloabcworld!")) == LLCS("helllowo_rld", "!helloabcworld!")
