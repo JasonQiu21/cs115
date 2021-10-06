@@ -32,13 +32,6 @@ def myLen(a):
     if not a:
         return 0
     return 1 + myLen(a[1:])
-def myMax(a, b):
-    '''
-    Return the max of a or b if a and b are numbers; else, return the element with longer length
-    '''
-    if isinstance(a, int) or isinstance(b, int):
-        return a if a>b else b
-    return a if myLen(a) > myLen(b) else b
     
 def LLCS(S1, S2):
     '''
@@ -56,7 +49,7 @@ def LLCS(S1, S2):
         else:
             use_it = 1 + LLCS(S1[1:], S2[index+1:])
         lose_it = LLCS(S1[1:], S2)
-        return myMax(use_it, lose_it)
+        return use_it if use_it>lose_it else lose_it
     return LLCS(S1[1:], S2)
 
 assert LLCS("helllowo_rld", "!helloabcworld!") == 10, LLCS("helllowo_rld", "!helloabcworld!")
@@ -83,7 +76,7 @@ def LCS(S1, S2):
         else:
             use_it = S1[0] + LCS(S1[1:], S2[index+1:])
         lose_it = LCS(S1[1:], S2)
-        return myMax(use_it, lose_it)
+        return use_it if myLen(use_it)>myLen(lose_it) else lose_it
     return LCS(S1[1:], S2)
 assert LCS("helllowo_rld", "!helloabcworld!") == "helloworld", LCS("helllowo_rld", "!helloabcworld!")
 assert len(LCS("helllowo_rld", "!helloabcworld!")) == LLCS("helllowo_rld", "!helloabcworld!")
