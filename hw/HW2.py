@@ -22,8 +22,10 @@ def getWeekday(date):
     m = (date%10000)//100
     k = (date//10000)%100
     j = floor((date//10000)/100)
-    return (q+floor(13*(m+1)/5+k+floor(k/4)+floor(j/4)-2*j))%7
-print(getWeekday(20211007))
+    return (q+floor(13*(m+1)/5+k+floor(k/4)+floor(j/4)-2*j))%7  
+
+# for i in range(8):
+#     print(getWeekday(20211007+i))
 
 ######################################################################
 # Task 2: Create two functions, an encoder and a decoder for the
