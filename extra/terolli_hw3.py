@@ -86,7 +86,7 @@ def wordsWithScore(dct, scores):
             return 0
         return scores[letterToNumber(word[0].lower())][1] + score(word[1:], scores)
     
-    return [dct[0], score(dct[0])] + wordsWithScore(dct[1:], scores)
+    return [[dct[0], score(dct[0])]] + wordsWithScore(dct[1:], scores)
 
 # print(wordsWithScore(Dictionary, scrabbleScores))
 
