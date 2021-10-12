@@ -25,30 +25,21 @@ def fast_change(a: int, coins = [1,5,10,25,50]):
     Returns the number of coins required to total the given amount.
     Use memoization to improve performance.'''
     if a in d2:
-        if coins == []:
-            return float('inf')
-        elif coins[-1] in d2[a]:
-            pass
-        elif a == coins[-1]:
-            d2[a][coins[-1]] = 1
-        elif a < coins[-1]:
-            d2[a][coins[-1]] = fast_change(a, coins[:-1])
-        else:
-            use_it = 1 + fast_change(a-coins[-1], coins)
-            lose_it = fast_change(a, coins[:-1])
-            d2[a][coins[-1]] = min(use_it, lose_it)
+        pass
     else:
         d2[a] = {}
-        if coins == []:
-            return float('inf')
-        elif a == coins[-1]:
-            d2[a][coins[-1]] = 1
-        elif a < coins[-1]:
-            d2[a][coins[-1]] = fast_change(a, coins[:-1])
-        else:    
-            use_it = 1 + fast_change(a-coins[-1], coins)
-            lose_it = fast_change(a, coins[:-1])
-            d2[a][coins[-1]] = min(use_it, lose_it)
+    if coins == []:
+        return float('inf')
+    elif coins[-1] in d2[a]:
+        pass
+    elif a == coins[-1]:
+        d2[a][coins[-1]] = 1
+    elif a < coins[-1]:
+        d2[a][coins[-1]] = fast_change(a, coins[:-1])
+    else:
+        use_it = 1 + fast_change(a-coins[-1], coins)
+        lose_it = fast_change(a, coins[:-1])
+        d2[a][coins[-1]] = min(use_it, lose_it)
     return d2[a][coins[-1]]
 
 
