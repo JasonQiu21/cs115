@@ -25,8 +25,7 @@ def decimalToBinary(x):
    elif x%2 == 0:
       return [0] + decimalToBinary(x//2)
    return [1] + decimalToBinary((x-1)//2)
-print(decimalToBinary(1))
-print(decimalToBinary(257))
+
 # Given an R2L formatted number, return the integer it is equivalent to.
 # The function should function with both [] and [0] returning 0.
 def binaryToDecimal(num):
