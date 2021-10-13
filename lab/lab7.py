@@ -31,7 +31,7 @@ def decimalToBinary(x):
 def binaryToDecimal(num):
    if num == [] or num == [0]:
       return 0
-   return 2**(len(num)-1) * num[-1] + binaryToDecimal(num[:-1])
+   return num[0] + 2*(binaryToDecimal(num[1:]))
 
 # Given an R2L formatted number, return an R2L equivalent to num + 1
 # If you need to increase the length, do so. Again, watch out for 0
