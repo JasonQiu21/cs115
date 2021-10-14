@@ -41,18 +41,6 @@ def binaryToNum(s):
         return 1*2**(len(s)-1)+binaryToNum(s[1:])
     else:
         return binaryToNum(s[1:])
-def incrementBinary(num, carry=1):
-   if carry == 1:
-      if num == []:
-         return [1]
-      elif num[0] == 1:
-         return [0] + incrementBinary(num[1:],carry=1)
-      return [1] + incrementBinary(num[1:],carry=0)
-   if num == []:
-      return []
-   elif num[0] == 1:
-      return [1] + incrementBinary(num[1:],carry=0)
-   return [0] + incrementBinary(num[1:],carry=0)
 
 def increment(s, carry=1):
     '''Precondition: s is a string of 8 bits.
