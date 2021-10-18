@@ -76,14 +76,15 @@ def uncompress(s:str, switch='0') -> str:
 def compression(s):
     return len(compress(s))/len(s)
 
-penguin = '00011000' + '00111100'*3 + '01111110' + '11111111' + '00111100' + '00100100'
+# penguin = '00011000' + '00111100'*3 + '01111110' + '11111111' + '00111100' + '00100100'
 
 # print(compress(penguin))
 # assert uncompress(compress(penguin)) == penguin
 # print(compression(penguin))
-sequence = '1' * MAX_RUN_LENGTH + '0' * MAX_RUN_LENGTH + '1' * (64 - 2 * MAX_RUN_LENGTH)
-print(sequence)
-print(compress(sequence))
+
+# sequence = '1' * MAX_RUN_LENGTH + '0' * MAX_RUN_LENGTH + '1' * (64 - 2 * MAX_RUN_LENGTH)
+# print(sequence)
+# print(compress(sequence))
 
 
 
