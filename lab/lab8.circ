@@ -61,116 +61,167 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
-      <circ-port height="10" pin="350,410" width="10" x="95" y="65"/>
-      <circ-port height="8" pin="70,310" width="8" x="66" y="46"/>
-      <circ-port height="8" pin="140,310" width="8" x="86" y="46"/>
       <path d="M71,51 Q75,61 79,51" fill="none" stroke="#808080" stroke-width="2"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="50" x="50" y="50"/>
+      <circ-port height="8" pin="100,300" width="8" x="46" y="56"/>
+      <circ-port height="10" pin="630,320" width="10" x="95" y="75"/>
+      <circ-port height="8" pin="100,360" width="8" x="46" y="66"/>
       <circ-anchor facing="east" height="6" width="6" x="97" y="57"/>
     </appear>
-    <comp lib="0" loc="(140,310)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Y"/>
-    </comp>
-    <comp lib="0" loc="(70,310)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="X"/>
-    </comp>
-    <comp lib="0" loc="(350,410)" name="Pin">
+    <wire from="(260,300)" to="(290,300)"/>
+    <wire from="(100,300)" to="(190,300)"/>
+    <wire from="(440,360)" to="(460,360)"/>
+    <wire from="(210,320)" to="(210,360)"/>
+    <wire from="(340,310)" to="(460,310)"/>
+    <wire from="(510,320)" to="(630,320)"/>
+    <wire from="(210,360)" to="(230,360)"/>
+    <wire from="(190,300)" to="(190,350)"/>
+    <wire from="(210,320)" to="(290,320)"/>
+    <wire from="(100,360)" to="(210,360)"/>
+    <wire from="(460,340)" to="(460,360)"/>
+    <wire from="(260,360)" to="(390,360)"/>
+    <wire from="(190,300)" to="(230,300)"/>
+    <wire from="(190,350)" to="(390,350)"/>
+    <comp lib="0" loc="(630,320)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="tristate" val="false"/>
+      <a name="label" val="XOR"/>
     </comp>
     <comp lib="2" loc="(314,250)" name="Text">
       <a name="text" val="Use minterm expansion to create an XOR gate using AND + OR gates"/>
     </comp>
+    <comp lib="0" loc="(100,300)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(100,360)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="1" loc="(510,320)" name="OR Gate"/>
+    <comp lib="1" loc="(440,360)" name="AND Gate"/>
+    <comp lib="1" loc="(340,310)" name="AND Gate"/>
+    <comp lib="1" loc="(260,300)" name="NOT Gate"/>
+    <comp lib="1" loc="(260,360)" name="NOT Gate"/>
   </circuit>
   <circuit name="ParityGenerator">
     <a name="circuit" val="ParityGenerator"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(520,380)" to="(640,380)"/>
-    <wire from="(310,370)" to="(370,370)"/>
-    <wire from="(310,340)" to="(690,340)"/>
-    <wire from="(590,230)" to="(590,240)"/>
-    <wire from="(280,230)" to="(330,230)"/>
-    <wire from="(690,250)" to="(690,340)"/>
-    <wire from="(650,250)" to="(690,250)"/>
-    <wire from="(480,240)" to="(590,240)"/>
-    <wire from="(280,430)" to="(390,430)"/>
-    <wire from="(310,340)" to="(310,370)"/>
-    <wire from="(600,270)" to="(600,290)"/>
-    <wire from="(330,230)" to="(370,230)"/>
-    <wire from="(370,370)" to="(410,370)"/>
-    <wire from="(640,410)" to="(640,430)"/>
-    <wire from="(400,230)" to="(430,230)"/>
-    <wire from="(440,370)" to="(470,370)"/>
-    <wire from="(580,290)" to="(600,290)"/>
-    <wire from="(690,390)" to="(900,390)"/>
-    <wire from="(620,430)" to="(640,430)"/>
-    <wire from="(350,290)" to="(370,290)"/>
-    <wire from="(390,430)" to="(410,430)"/>
-    <wire from="(350,250)" to="(350,290)"/>
-    <wire from="(390,390)" to="(390,430)"/>
-    <wire from="(350,250)" to="(430,250)"/>
-    <wire from="(390,390)" to="(470,390)"/>
-    <wire from="(330,230)" to="(330,280)"/>
-    <wire from="(370,370)" to="(370,420)"/>
-    <wire from="(400,290)" to="(530,290)"/>
-    <wire from="(440,430)" to="(570,430)"/>
-    <wire from="(330,280)" to="(530,280)"/>
-    <wire from="(370,420)" to="(570,420)"/>
-    <wire from="(280,290)" to="(350,290)"/>
-    <wire from="(590,230)" to="(600,230)"/>
+    <wire from="(300,450)" to="(360,450)"/>
+    <wire from="(300,420)" to="(680,420)"/>
+    <wire from="(270,310)" to="(320,310)"/>
+    <wire from="(440,600)" to="(440,610)"/>
+    <wire from="(310,570)" to="(310,580)"/>
+    <wire from="(310,590)" to="(310,600)"/>
+    <wire from="(680,330)" to="(680,420)"/>
+    <wire from="(640,330)" to="(680,330)"/>
+    <wire from="(460,620)" to="(460,640)"/>
+    <wire from="(470,320)" to="(580,320)"/>
+    <wire from="(300,420)" to="(300,450)"/>
+    <wire from="(270,600)" to="(310,600)"/>
+    <wire from="(590,350)" to="(590,370)"/>
+    <wire from="(320,310)" to="(360,310)"/>
+    <wire from="(360,450)" to="(400,450)"/>
+    <wire from="(630,490)" to="(630,510)"/>
+    <wire from="(390,310)" to="(420,310)"/>
+    <wire from="(430,450)" to="(460,450)"/>
+    <wire from="(680,470)" to="(890,470)"/>
+    <wire from="(340,370)" to="(360,370)"/>
+    <wire from="(440,610)" to="(460,610)"/>
+    <wire from="(380,510)" to="(400,510)"/>
+    <wire from="(360,600)" to="(440,600)"/>
+    <wire from="(430,510)" to="(560,510)"/>
+    <wire from="(390,370)" to="(520,370)"/>
+    <wire from="(320,360)" to="(520,360)"/>
+    <wire from="(360,500)" to="(560,500)"/>
+    <wire from="(510,460)" to="(630,460)"/>
+    <wire from="(580,310)" to="(580,320)"/>
+    <wire from="(270,640)" to="(460,640)"/>
+    <wire from="(510,630)" to="(550,630)"/>
+    <wire from="(270,510)" to="(380,510)"/>
+    <wire from="(270,570)" to="(310,570)"/>
+    <wire from="(570,370)" to="(590,370)"/>
+    <wire from="(610,510)" to="(630,510)"/>
+    <wire from="(340,330)" to="(340,370)"/>
+    <wire from="(380,470)" to="(380,510)"/>
+    <wire from="(340,330)" to="(420,330)"/>
+    <wire from="(380,470)" to="(460,470)"/>
+    <wire from="(320,310)" to="(320,360)"/>
+    <wire from="(360,450)" to="(360,500)"/>
+    <wire from="(270,370)" to="(340,370)"/>
+    <wire from="(580,310)" to="(590,310)"/>
+    <comp lib="0" loc="(270,600)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="1" loc="(640,330)" name="OR Gate"/>
+    <comp lib="2" loc="(526,135)" name="Text">
+      <a name="text" val="WRITE YOUR NAME AND PLEDGE SOMEWHERE IN THIS CIRCUIT"/>
+    </comp>
+    <comp lib="1" loc="(470,320)" name="AND Gate"/>
+    <comp lib="1" loc="(510,460)" name="AND Gate"/>
+    <comp lib="0" loc="(270,510)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Z"/>
+    </comp>
+    <comp lib="2" loc="(141,27)" name="Text">
+      <a name="text" val="Input Bits"/>
+    </comp>
+    <comp lib="0" loc="(270,310)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
     <comp lib="2" loc="(500,77)" name="Text">
       <a name="text" val="the output = 1 if an odd number of inputs (1 or 3) are 1, otherwise 0"/>
     </comp>
-    <comp lib="1" loc="(440,370)" name="NOT Gate"/>
-    <comp lib="1" loc="(400,230)" name="NOT Gate"/>
-    <comp lib="2" loc="(514,98)" name="Text">
-      <a name="text" val="ONLY use: NOT, AND, OR, and any custom functions you write (included in the .circ submission)"/>
-    </comp>
-    <comp lib="2" loc="(497,68)" name="Text"/>
-    <comp lib="1" loc="(400,290)" name="NOT Gate"/>
-    <comp lib="1" loc="(520,380)" name="AND Gate"/>
-    <comp lib="1" loc="(580,290)" name="AND Gate"/>
-    <comp lib="0" loc="(900,390)" name="Pin">
+    <comp lib="0" loc="(550,630)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Parity"/>
     </comp>
-    <comp lib="2" loc="(526,135)" name="Text">
-      <a name="text" val="WRITE YOUR NAME AND PLEDGE SOMEWHERE IN THIS CIRCUIT"/>
-    </comp>
-    <comp lib="0" loc="(280,290)" name="Pin">
+    <comp lib="1" loc="(430,450)" name="NOT Gate"/>
+    <comp lib="0" loc="(890,470)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="Y"/>
+      <a name="label" val="Parity"/>
     </comp>
-    <comp lib="1" loc="(690,390)" name="OR Gate"/>
-    <comp lib="1" loc="(620,430)" name="AND Gate"/>
-    <comp lib="2" loc="(494,47)" name="Text">
-      <a name="text" val="Write your parity circuit here"/>
-    </comp>
-    <comp lib="1" loc="(480,240)" name="AND Gate"/>
-    <comp lib="0" loc="(280,430)" name="Pin">
+    <comp lib="1" loc="(390,370)" name="NOT Gate"/>
+    <comp lib="0" loc="(270,640)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Z"/>
     </comp>
-    <comp lib="0" loc="(280,230)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="X"/>
+    <comp lib="2" loc="(497,68)" name="Text"/>
+    <comp lib="2" loc="(522,267)" name="Text">
+      <a name="text" val="The following two circuits are functionally equivalent; one is simplified with the XOR circuit."/>
     </comp>
-    <comp lib="2" loc="(141,27)" name="Text">
-      <a name="text" val="Input Bits"/>
+    <comp lib="1" loc="(570,370)" name="AND Gate"/>
+    <comp loc="(360,580)" name="XOR"/>
+    <comp lib="2" loc="(494,47)" name="Text">
+      <a name="text" val="Write your parity circuit here"/>
     </comp>
-    <comp lib="1" loc="(440,430)" name="NOT Gate"/>
-    <comp lib="1" loc="(650,250)" name="OR Gate"/>
+    <comp lib="2" loc="(514,98)" name="Text">
+      <a name="text" val="ONLY use: NOT, AND, OR, and any custom functions you write (included in the .circ submission)"/>
+    </comp>
+    <comp lib="1" loc="(430,510)" name="NOT Gate"/>
     <comp lib="2" loc="(503,175)" name="Text">
       <a name="text" val="I pledge my honor that I have abided by the Stevens Honor System. - Jason Qiu"/>
     </comp>
+    <comp lib="1" loc="(680,470)" name="OR Gate"/>
+    <comp lib="0" loc="(270,570)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="1" loc="(610,510)" name="AND Gate"/>
+    <comp loc="(510,610)" name="XOR"/>
+    <comp lib="0" loc="(270,370)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="1" loc="(390,310)" name="NOT Gate"/>
   </circuit>
 </project>
