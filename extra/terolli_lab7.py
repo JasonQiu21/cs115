@@ -135,9 +135,14 @@ def test_fourBitAdd():
 
 # More general case:
 def nBitAdd(x,y):
-    """Add two binary tuples of length n"""
-    if len(x) != len(y):
-        raise Exception("x and y must be same length")
+    """Add two binary tuples"""
+    def equalize(x,y):
+        if len(x) == len(y):
+            return x,y
+        elif len(x) < len(y):
+            return equalize((0,*x), y)
+        return equalize(x,(0,*y))
+    x,y = equalize(x,y)
     c = 0
     l = []
     for i,j in zip(x[::-1],y[::-1]):
