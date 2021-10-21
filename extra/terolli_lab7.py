@@ -59,7 +59,9 @@ def FA(x,y,cin):
     Return the pair of bits (carry_out,sum) such that
     sum is the low bit of x+y+cin and carry_out is
     the high bit of x+y+carry_in.'''
+    # carry_out == 1 if at least two of x,y,cin are 1, else 0
     carry_out = gor(gand(gor(x,y),cin),gand(x,gor(y,cin)))
+    # sum_ == 1 if an odd number of bits are 1, else 0
     sum_ = XOR(XOR(x,y),cin)
     return (carry_out, sum_)
 
@@ -130,3 +132,15 @@ def test_fourBitAdd():
     assert fourBitAdd((0,0,1,1), (0,0,0,0)) == (0, (0,0,1,1))
     assert fourBitAdd((1,1,1,1), (0,1,1,0)) == (1, (0,1,0,1))
     print("fourBitAdd worked, incomplete test")
+
+# More general case:
+def nBitAdd(x,y):
+    """Add two binary tuples of length n"""
+    if len(x) != len(y):
+        raise Exception("x and y must be same length")
+    c = 0
+    l = []
+    for i,j in zip(x[::-1],y[::-1]):
+        c, k = FA(i,j,c)
+        l.append(k)
+    return (c,tuple(l[::-1]))
