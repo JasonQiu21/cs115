@@ -61,7 +61,7 @@ def f(x, y, z):
 #    C: 110111
 #    D: 010111
 #
-# ANSWER = C
+# ANSWER = B
 #
 ###########################################################################
 # Part C: Using two's complement with six bits, what is the largest
@@ -76,7 +76,7 @@ def f(x, y, z):
 #
 # LARGEST = 011111            your answer, in binary
 # 
-# SMALLEST = 111111           your answer, in binary
+# SMALLEST = 100000           your answer, in binary
 #
 ############################################################################ 
 
