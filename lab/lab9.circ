@@ -74,8 +74,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(120,120)" to="(120,130)"/>
     <wire from="(130,90)" to="(130,120)"/>
     <wire from="(70,90)" to="(70,120)"/>
-    <comp lib="2" loc="(417,42)" name="Text">
-      <a name="text" val="Using only OR and NOT gates, please create the NOR gate"/>
+    <comp lib="1" loc="(100,180)" name="OR Gate">
+      <a name="facing" val="south"/>
     </comp>
     <comp lib="0" loc="(100,250)" name="Pin">
       <a name="facing" val="north"/>
@@ -83,23 +83,23 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Out"/>
     </comp>
-    <comp lib="1" loc="(100,180)" name="OR Gate">
+    <comp lib="1" loc="(100,210)" name="NOT Gate">
       <a name="facing" val="south"/>
-    </comp>
-    <comp lib="2" loc="(402,65)" name="Text">
-      <a name="text" val="This gate returns 1 if both bits are 0, and 0 otherwise"/>
     </comp>
     <comp lib="0" loc="(130,90)" name="Pin">
       <a name="facing" val="south"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Y"/>
     </comp>
-    <comp lib="1" loc="(100,210)" name="NOT Gate">
-      <a name="facing" val="south"/>
+    <comp lib="2" loc="(417,42)" name="Text">
+      <a name="text" val="Using only OR and NOT gates, please create the NOR gate"/>
     </comp>
     <comp lib="2" loc="(271,29)" name="Text">
       <a name="text" val="NOR"/>
       <a name="font" val="SansSerif plain 20"/>
+    </comp>
+    <comp lib="2" loc="(402,65)" name="Text">
+      <a name="text" val="This gate returns 1 if both bits are 0, and 0 otherwise"/>
     </comp>
     <comp lib="0" loc="(70,90)" name="Pin">
       <a name="facing" val="south"/>
@@ -112,18 +112,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(230,100)" to="(320,100)"/>
     <wire from="(50,190)" to="(140,190)"/>
-    <wire from="(50,120)" to="(50,190)"/>
     <wire from="(50,190)" to="(50,260)"/>
     <wire from="(50,260)" to="(50,330)"/>
+    <wire from="(50,120)" to="(50,190)"/>
+    <wire from="(50,120)" to="(140,120)"/>
     <wire from="(120,170)" to="(120,240)"/>
     <wire from="(120,240)" to="(120,310)"/>
-    <wire from="(50,120)" to="(170,120)"/>
     <wire from="(50,260)" to="(170,260)"/>
     <wire from="(50,330)" to="(170,330)"/>
     <wire from="(120,240)" to="(140,240)"/>
-    <wire from="(120,80)" to="(170,80)"/>
+    <wire from="(120,80)" to="(140,80)"/>
     <wire from="(120,170)" to="(170,170)"/>
     <wire from="(120,310)" to="(170,310)"/>
     <wire from="(120,310)" to="(120,360)"/>
@@ -134,8 +133,39 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(220,180)" to="(320,180)"/>
     <wire from="(220,250)" to="(320,250)"/>
     <wire from="(220,320)" to="(320,320)"/>
-    <comp lib="2" loc="(615,126)" name="Text">
-      <a name="text" val="11 should turn on Output3 and nothing else"/>
+    <wire from="(220,100)" to="(320,100)"/>
+    <comp lib="2" loc="(614,83)" name="Text">
+      <a name="text" val="00 should turn on Output0 and nothing else"/>
+    </comp>
+    <comp lib="1" loc="(170,80)" name="NOT Gate"/>
+    <comp lib="0" loc="(320,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Output1"/>
+    </comp>
+    <comp lib="1" loc="(220,320)" name="AND Gate"/>
+    <comp lib="1" loc="(170,240)" name="NOT Gate"/>
+    <comp lib="1" loc="(220,250)" name="AND Gate"/>
+    <comp lib="1" loc="(170,190)" name="NOT Gate"/>
+    <comp lib="2" loc="(672,46)" name="Text">
+      <a name="text" val="Using only AND and NOT gates, please write this decoder circuit"/>
+    </comp>
+    <comp lib="1" loc="(220,180)" name="AND Gate"/>
+    <comp lib="2" loc="(614,97)" name="Text">
+      <a name="text" val="01 should turn on Output1 and nothing else"/>
+    </comp>
+    <comp lib="2" loc="(645,68)" name="Text">
+      <a name="text" val="Consider the input 01 to mean Input0 is 0, Input1 is 1."/>
+    </comp>
+    <comp lib="0" loc="(320,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Output0"/>
+    </comp>
+    <comp lib="2" loc="(613,112)" name="Text">
+      <a name="text" val="10 should turn on Output2 and nothing else"/>
     </comp>
     <comp lib="0" loc="(320,250)" name="Pin">
       <a name="facing" val="west"/>
@@ -143,22 +173,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Ouput2"/>
     </comp>
-    <comp lib="1" loc="(220,320)" name="AND Gate"/>
-    <comp lib="0" loc="(320,180)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Output1"/>
+    <comp lib="1" loc="(220,100)" name="AND Gate"/>
+    <comp lib="2" loc="(552,29)" name="Text">
+      <a name="text" val="2 Bit Decoder"/>
+      <a name="font" val="SansSerif plain 20"/>
     </comp>
-    <comp lib="1" loc="(220,180)" name="AND Gate"/>
-    <comp lib="0" loc="(320,100)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Output0"/>
-    </comp>
-    <comp lib="2" loc="(645,68)" name="Text">
-      <a name="text" val="Consider the input 01 to mean Input0 is 0, Input1 is 1."/>
+    <comp lib="2" loc="(615,126)" name="Text">
+      <a name="text" val="11 should turn on Output3 and nothing else"/>
     </comp>
     <comp lib="0" loc="(320,320)" name="Pin">
       <a name="facing" val="west"/>
@@ -171,61 +192,69 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Input0"/>
     </comp>
-    <comp lib="2" loc="(552,29)" name="Text">
-      <a name="text" val="2 Bit Decoder"/>
-      <a name="font" val="SansSerif plain 20"/>
-    </comp>
-    <comp lib="1" loc="(170,240)" name="NOT Gate"/>
-    <comp loc="(170,100)" name="NOR"/>
-    <comp lib="2" loc="(613,112)" name="Text">
-      <a name="text" val="10 should turn on Output2 and nothing else"/>
-    </comp>
     <comp lib="0" loc="(120,60)" name="Pin">
       <a name="facing" val="south"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Input1"/>
     </comp>
-    <comp lib="2" loc="(672,46)" name="Text">
-      <a name="text" val="Using only AND and NOT gates, please write this decoder circuit"/>
-    </comp>
-    <comp lib="1" loc="(220,250)" name="AND Gate"/>
-    <comp lib="2" loc="(614,83)" name="Text">
-      <a name="text" val="00 should turn on Output0 and nothing else"/>
-    </comp>
-    <comp lib="1" loc="(170,190)" name="NOT Gate"/>
-    <comp lib="2" loc="(614,97)" name="Text">
-      <a name="text" val="01 should turn on Output1 and nothing else"/>
-    </comp>
+    <comp lib="1" loc="(170,120)" name="NOT Gate"/>
   </circuit>
   <circuit name="SR_Latch">
     <a name="circuit" val="SR_Latch"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(140,90)" to="(170,90)"/>
+    <wire from="(140,190)" to="(170,190)"/>
+    <wire from="(50,70)" to="(80,70)"/>
+    <wire from="(50,210)" to="(80,210)"/>
+    <wire from="(30,110)" to="(80,110)"/>
+    <wire from="(80,150)" to="(130,150)"/>
     <wire from="(170,190)" to="(280,190)"/>
     <wire from="(30,130)" to="(170,130)"/>
     <wire from="(30,110)" to="(30,130)"/>
-    <wire from="(40,150)" to="(130,150)"/>
-    <wire from="(50,200)" to="(90,200)"/>
-    <wire from="(30,110)" to="(70,110)"/>
-    <wire from="(50,80)" to="(70,80)"/>
-    <wire from="(130,90)" to="(130,150)"/>
-    <wire from="(40,180)" to="(90,180)"/>
-    <wire from="(40,150)" to="(40,180)"/>
+    <wire from="(80,150)" to="(80,170)"/>
+    <wire from="(130,120)" to="(170,120)"/>
+    <wire from="(130,120)" to="(130,150)"/>
+    <wire from="(170,90)" to="(170,120)"/>
     <wire from="(170,130)" to="(170,190)"/>
-    <wire from="(150,190)" to="(170,190)"/>
-    <comp lib="2" loc="(580,117)" name="Text">
-      <a name="text" val="Notice that in the SR=00 state, the output Q could be either 0 or 1 !  "/>
+    <comp lib="2" loc="(705,66)" name="Text">
+      <a name="text" val="In this circuit, each input feeds one NOR gate, and the output of each NOR gate loops intp the other input's gate"/>
     </comp>
-    <comp lib="2" loc="(639,184)" name="Text">
-      <a name="text" val="Logism will also throw this error every time you open a successfully built latch's .circ file"/>
+    <comp lib="0" loc="(50,70)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="pull" val="down"/>
+      <a name="label" val="S"/>
     </comp>
     <comp lib="2" loc="(699,130)" name="Text">
       <a name="text" val="This makes the latch different from any circuit you've worked with before, and the basis for computer memory."/>
     </comp>
-    <comp lib="2" loc="(705,66)" name="Text">
-      <a name="text" val="In this circuit, each input feeds one NOR gate, and the output of each NOR gate loops intp the other input's gate"/>
+    <comp lib="2" loc="(561,43)" name="Text">
+      <a name="text" val="Using two of the NOR gate you just wrote, create an S-R latch"/>
     </comp>
+    <comp lib="2" loc="(731,82)" name="Text">
+      <a name="text" val="The output should become 1 when S is turned on, 0 when R is turned on, and remain whatever it is if both are turned off"/>
+    </comp>
+    <comp lib="2" loc="(580,117)" name="Text">
+      <a name="text" val="Notice that in the SR=00 state, the output Q could be either 0 or 1 !  "/>
+    </comp>
+    <comp lib="2" loc="(429,24)" name="Text">
+      <a name="text" val="S-R Latch"/>
+      <a name="font" val="SansSerif plain 20"/>
+    </comp>
+    <comp lib="2" loc="(668,213)" name="Text">
+      <a name="text" val="Then, draw your loop back in and it should function properly. If not, go to someone's office hours."/>
+    </comp>
+    <comp lib="2" loc="(726,198)" name="Text">
+      <a name="text" val="To fix this, break any loop in your circuit, then in the Simulate menu up top turn &quot;Simulation Enabled&quot; on and off again"/>
+    </comp>
+    <comp lib="2" loc="(639,184)" name="Text">
+      <a name="text" val="Logism will also throw this error every time you open a successfully built latch's .circ file"/>
+    </comp>
+    <comp lib="2" loc="(667,170)" name="Text">
+      <a name="text" val="If your wires turn red and Logism yells at you for apparent oscillation, you've messed something up."/>
+    </comp>
+    <comp loc="(80,190)" name="NOR"/>
     <comp lib="0" loc="(280,190)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -233,37 +262,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="pull" val="up"/>
       <a name="label" val="Q"/>
     </comp>
-    <comp lib="0" loc="(50,200)" name="Pin">
+    <comp loc="(80,90)" name="NOR"/>
+    <comp lib="0" loc="(50,210)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="pull" val="down"/>
       <a name="label" val="R"/>
     </comp>
-    <comp lib="2" loc="(429,24)" name="Text">
-      <a name="text" val="S-R Latch"/>
-      <a name="font" val="SansSerif plain 20"/>
-    </comp>
-    <comp lib="0" loc="(50,80)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="pull" val="down"/>
-      <a name="label" val="S"/>
-    </comp>
-    <comp lib="2" loc="(726,198)" name="Text">
-      <a name="text" val="To fix this, break any loop in your circuit, then in the Simulate menu up top turn &quot;Simulation Enabled&quot; on and off again"/>
-    </comp>
-    <comp lib="1" loc="(150,190)" name="NOR Gate"/>
-    <comp lib="2" loc="(731,82)" name="Text">
-      <a name="text" val="The output should become 1 when S is turned on, 0 when R is turned on, and remain whatever it is if both are turned off"/>
-    </comp>
-    <comp lib="2" loc="(668,213)" name="Text">
-      <a name="text" val="Then, draw your loop back in and it should function properly. If not, go to someone's office hours."/>
-    </comp>
-    <comp lib="2" loc="(667,170)" name="Text">
-      <a name="text" val="If your wires turn red and Logism yells at you for apparent oscillation, you've messed something up."/>
-    </comp>
-    <comp lib="2" loc="(561,43)" name="Text">
-      <a name="text" val="Using two of the NOR gate you just wrote, create an S-R latch"/>
-    </comp>
-    <comp lib="1" loc="(130,90)" name="NOR Gate"/>
     <comp lib="2" loc="(565,96)" name="Text">
       <a name="text" val="The behavior of this circuit is not defined if both S and R are on"/>
     </comp>
@@ -299,64 +303,64 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(60,120)" to="(70,120)"/>
     <wire from="(120,110)" to="(120,230)"/>
     <wire from="(190,210)" to="(260,210)"/>
-    <comp loc="(270,100)" name="NOR"/>
-    <comp lib="1" loc="(210,100)" name="AND Gate"/>
+    <comp lib="2" loc="(716,218)" name="Text">
+      <a name="text" val="The whole oscillation deal also applies here - be ready to fight Logism"/>
+    </comp>
+    <comp lib="2" loc="(822,42)" name="Text">
+      <a name="text" val="The S-R latch we just designed has several flaws, such as both S and R being 1 not having defined output"/>
+    </comp>
+    <comp lib="0" loc="(60,230)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Strobe"/>
+    </comp>
+    <comp lib="2" loc="(858,292)" name="Text">
+      <a name="text" val="I pledge my honor that I have abided by the Stevens Honor System. Jason Qiu"/>
+    </comp>
     <comp lib="2" loc="(662,193)" name="Text">
       <a name="text" val="This avoids the situation where both S and R are on"/>
     </comp>
+    <comp lib="2" loc="(720,57)" name="Text">
+      <a name="text" val="The D latch improves on the S-R by having one input, D, and a Strobe."/>
+    </comp>
+    <comp lib="2" loc="(769,166)" name="Text">
+      <a name="text" val="If Strobe is 0, you need to stop any inputs to your S-R latch, consider how to do that"/>
+    </comp>
+    <comp lib="1" loc="(210,100)" name="AND Gate"/>
+    <comp lib="1" loc="(100,120)" name="NOT Gate"/>
     <comp lib="2" loc="(861,154)" name="Text">
       <a name="text" val="This is accomplished with an S-R latch as part of the D latch - do not drag in your pre-built SR latch, create it anew!"/>
     </comp>
-    <comp lib="2" loc="(762,179)" name="Text">
-      <a name="text" val="D will feed eventually into both S and R inputs to the S-R latch, just invert one of them"/>
+    <comp lib="2" loc="(1149,209)" name="Text">
+      <a name="text" val="Hint: Check out week9.pdf"/>
     </comp>
+    <comp lib="1" loc="(190,210)" name="AND Gate"/>
     <comp lib="0" loc="(380,200)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Output"/>
     </comp>
-    <comp lib="2" loc="(720,57)" name="Text">
-      <a name="text" val="The D latch improves on the S-R by having one input, D, and a Strobe."/>
+    <comp loc="(270,100)" name="NOR"/>
+    <comp lib="2" loc="(762,179)" name="Text">
+      <a name="text" val="D will feed eventually into both S and R inputs to the S-R latch, just invert one of them"/>
     </comp>
-    <comp lib="2" loc="(716,218)" name="Text">
-      <a name="text" val="The whole oscillation deal also applies here - be ready to fight Logism"/>
+    <comp lib="2" loc="(744,122)" name="Text">
+      <a name="text" val="If Strobe is 0, then the value of D should have no impact at all on the output bit"/>
     </comp>
-    <comp lib="0" loc="(60,230)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Strobe"/>
-    </comp>
-    <comp loc="(260,200)" name="NOR"/>
-    <comp lib="2" loc="(552,24)" name="Text">
-      <a name="text" val="D Latch"/>
-      <a name="font" val="SansSerif plain 20"/>
+    <comp lib="2" loc="(701,80)" name="Text">
+      <a name="text" val="Your circuit should use 2 NOR gates, 2 AND gates, and 1 NOT. "/>
     </comp>
     <comp lib="0" loc="(50,90)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="D"/>
     </comp>
-    <comp lib="2" loc="(1149,209)" name="Text">
-      <a name="text" val="Hint: Check out week9.pdf"/>
-    </comp>
-    <comp lib="2" loc="(769,166)" name="Text">
-      <a name="text" val="If Strobe is 0, you need to stop any inputs to your S-R latch, consider how to do that"/>
-    </comp>
-    <comp lib="2" loc="(744,122)" name="Text">
-      <a name="text" val="If Strobe is 0, then the value of D should have no impact at all on the output bit"/>
-    </comp>
-    <comp lib="1" loc="(190,210)" name="AND Gate"/>
     <comp lib="2" loc="(713,138)" name="Text">
       <a name="text" val="If Strobe is 1, then the value of output should become the value of D"/>
     </comp>
-    <comp lib="1" loc="(100,120)" name="NOT Gate"/>
-    <comp lib="2" loc="(822,42)" name="Text">
-      <a name="text" val="The S-R latch we just designed has several flaws, such as both S and R being 1 not having defined output"/>
-    </comp>
-    <comp lib="2" loc="(701,80)" name="Text">
-      <a name="text" val="Your circuit should use 2 NOR gates, 2 AND gates, and 1 NOT. "/>
-    </comp>
-    <comp lib="2" loc="(858,292)" name="Text">
-      <a name="text" val="I pledge my honor that I have abided by the Stevens Honor System. Jason Qiu"/>
+    <comp loc="(260,200)" name="NOR"/>
+    <comp lib="2" loc="(552,24)" name="Text">
+      <a name="text" val="D Latch"/>
+      <a name="font" val="SansSerif plain 20"/>
     </comp>
   </circuit>
 </project>
