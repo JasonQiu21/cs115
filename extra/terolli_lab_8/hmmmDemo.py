@@ -108,7 +108,7 @@ Fib ="""
 # register usage: 
 
 00 read r1          # Get n
-01 setn r2 1        # init r2,r3,r4
+01 setn r2 0        # init r2,r3,r4
 02 setn r3 1
 03 setn r4 1
 04 setn r5 1
@@ -142,5 +142,3 @@ if __name__ == "__main__" :
     import hmmmSimulator ; importlib.reload(hmmmSimulator)
     hmmmAssembler.main(RunThis) # assemble input into machine code file out.b
     hmmmSimulator.main(Mode)    # run the machine code in out.b
-
-
