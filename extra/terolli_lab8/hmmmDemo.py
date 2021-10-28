@@ -99,33 +99,9 @@ Factorial = """
 7       halt
 """
 
-Fib ="""
-# Input: n
-# Assume: n >= 0
-# Output: first n numbers of Fibonacci Sequence
-#
-
-# register usage: 
-
-00 read r1          # Get n
-01 setn r2 0        # init r2,r3,r4
-02 setn r3 1
-03 setn r4 1
-04 setn r5 1
-05 jeqzn r1 12      # done if r1 is 0
-06 write r2
-07 copy r4 r2
-08 copy r2 r3
-09 add r3 r2 r4     # r3 = r2 + r4
-10 sub r1 r1 r5      # r1 -= 1
-11 jumpn 05
-12 halt
-
-"""
-
 # Set this variable to whichever program you want to execute
 # when this file is loaded.
-RunThis = Fib
+RunThis = Example1
 
 # Choose whether to use debug mode; uncomment one of the following lines.
 # Mode = ['-n'] # not debug mode, 
