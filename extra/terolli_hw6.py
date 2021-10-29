@@ -69,7 +69,7 @@ def uncompress(s:str, switch='0') -> str:
         '''
         if not s:
             return []
-        return [binaryToNum(s[0:5])] + helper(s[5:])
+        return [binaryToNum(s[0:COMPRESSED_BLOCK_SIZE])] + helper(s[5:])
     a = helper(s)
     return reduce(lambda x,y: x+y, map(lambda x,y: '0'*x if y%2 == 0 else '1'*x, a, range(len(a))))
 
