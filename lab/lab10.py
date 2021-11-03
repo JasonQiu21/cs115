@@ -33,7 +33,7 @@ Power = """
 00 read r1      # Get n
 01 read r2      # Get m
 02 setn r3 1    # Initialize r3
-03 jeqzn r2 07   # If exp==0, jump line 7
+03 jeqzn r2 07  # If exp==0, jump line 7
 04 mul r3 r1 r3 # r3*=r1
 05 addn r2 -1   # r2--
 06 jumpn 03     # repeat
