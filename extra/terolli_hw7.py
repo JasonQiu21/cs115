@@ -140,7 +140,7 @@ L5 = '0000111100001111' # runBits 3
 L6 = '0' * MAX_RUN_LENGTH + '1' * MAX_RUN_LENGTH + '0' * (64 - 2 * MAX_RUN_LENGTH)
 L7 = '0' * (MAX_RUN_LENGTH + 1) + '1' * (MAX_RUN_LENGTH + 1) + '0' * (64 - 2 * MAX_RUN_LENGTH - 2)
 L8 = '1' * MAX_RUN_LENGTH + '0' * MAX_RUN_LENGTH + '1' * (64 - 2 * MAX_RUN_LENGTH)
-
+ll = [L0, L1, L2, L3, L4, L5, L6, L7, L8]
 
 def listOfRunLengths(s):
     '''Assume s is a nonempty string.  Return a list of the lengths of its runs.
@@ -172,11 +172,12 @@ def findRunBits(s):
         The maximum n is 7 because only three bits are available
         for it (the bbb in the compressed format).'''
     l = listOfRunLengths(s)
-    x = math.ceil(math.log(sum(l)/len(l)))
+    x = math.ceil(math.log(sum(l)//len(l), 2)) + 1
     return x if x<7 else 7
     # My solution is four lines of code, no recursion, but using the
     # built-in sum, min, and len functions as well as log and ceiling.
-
+for i in ll:
+    print(findRunBits(i))
 ########
 # Step 3 
 # Here are compressA and uncompressA using the preceding functions.
