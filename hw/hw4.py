@@ -6,27 +6,7 @@ import hmmm
 # recursion, & you MUST do so for any credit
 # The tests are still the same as from Lab 9
 # Tests: f(2) = 1, f(5) = 5, f(9) = 34
-RecFibSeq = """ # You may not need all lines
-# Input: n
-# Output: nth Fibbonacci number; f(0) = 1
-# Assume: n>=0; n is an int
-00 read r1          # Get n
-01 setn r2 1        # init r2,r3,r4
-02 setn r3 1        # ^
-03 setn r4 1        # ^
-04 copy r5 r2       # set r5 to r2
-05 jeqzn r1 12      # done if r1 is 0
-06 copy r5 r2       # set r5 to r2
-07 copy r4 r2       # r4 gets set to r2
-08 copy r2 r3       # r2 gets set to r3
-09 add r3 r2 r4     # r3 = r2 + r4
-10 addn r1 -1       # r1--
-11 jumpn 05         # repeat
-12 write r5         # print r5
-13 halt
-"""
-
-FibRec = """
+RecFibSeq = """
 # Input: n
 # Output: nth Fibbonacci number; f(0) = 1
 # Assume: n>=0; n is an int
