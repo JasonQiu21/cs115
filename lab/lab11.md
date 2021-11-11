@@ -6,7 +6,7 @@
     * If you start at 42, the stack goes to 47.
     * If you were to start at 16 (the lowest possible starting point), the stack would go as high as 21.
 3. What are the possible values of  r14?
-    * Possible values for r14 are 2 and 11.
+    * Possible values for r14 are 3 and 12.
 
 I pledge my honor that I have abided by the Stevens Honor System.
 
