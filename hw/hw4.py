@@ -29,14 +29,14 @@ RecFibSeq = """
 09 setn r12 1
 10 jumpr r14
 
-11 pushr r1 r15     # Recursive function call 1 (fib(n-1))
+11 pushr r1 r15     # Recursive function call 1 (fib(n-2))
 12 pushr r14 r15
-13 addn r1 -1
+13 addn r1 -2
 14 calln r14 06
 15 popr r14 r15
 16 popr r1 r15
 
-17 pushr r1 r15     # Recursive function call 2 (fib(n-2))
+17 pushr r1 r15     # Recursive function call 2 (fib(n-1))
 18 pushr r14 r15
 19 addn r1 -1
 20 calln r14 06
