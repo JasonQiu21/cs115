@@ -54,25 +54,10 @@ def mset(n):
             y = scale(row, height, -1.,1.)
             c = x+y*1j
             if inMSet(c, 25):
-                print(c)
+                # print(c)
                 image.plotPoint(col,row)
     image.saveFile()
-def weWantThisPixel(col, row):
-    """This function returns True if we want to show the pixel at col, row and False otherwise."""
-    if col % 10 == 0  and  row % 10 == 0: 
-        return True
-    else:return False
-def test():
-    """This function demonstrates how to create and save a PNG image."""
-    width = 300
-    height = 200
-    image = PNGImage(width, height)
-    # create a loop in order to draw some pixels 
-    for col in range(width):
-        for row in range(height):
-            if weWantThisPixel(col, row): image.plotPoint(col, row)
-    # we looped through every image pixel; we now write the file 
-    image.saveFile()
+
 if __name__ == "__main__":
     iterations = 100 # Change this to play with the picture, once everything's working
     mset(iterations)
