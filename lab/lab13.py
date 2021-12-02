@@ -12,6 +12,15 @@
 # Your constructor should allow for up to three argument (for the month,
 # day, and year).  Hint: recall the syntax for default parameter values.
 
+class InvalidDateError(ValueError):
+    
+    def __init__(self, m, d, y):
+        if m > 12:
+            message = "Invalid Month"
+        elif d > Date.daysInMonth[m]:
+            message = "Invalid Day"
+        super(InvalidDateError, self).__init__(message)
+
 
 
 # Fill in the missing part in the class Date below
@@ -61,7 +70,7 @@ class Date:
             self._year = abs(year)
             self.ce = True if year >= 0 else False # Negative years are interpreted as the year BCE
         else:
-            raise InvalidDateError("Invalid Date")
+            raise InvalidDateError(month, day, year)
 
     def __repr__(self):
         # Make sure to return a string that looks like a valid
@@ -158,3 +167,5 @@ class Date:
                 out.set_day(out.get_day()+deltaInDays)
                 deltaInDays = 0
         return out
+
+d = Date(20,20,1970)
