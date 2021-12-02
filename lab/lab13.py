@@ -167,5 +167,3 @@ class Date:
                 out.set_day(out.get_day()+deltaInDays)
                 deltaInDays = 0
         return out
-
-d = Date(20,20,1970)
