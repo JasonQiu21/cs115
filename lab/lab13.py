@@ -1,4 +1,7 @@
-#
+# I pledge my honor that I have abided by the Stevens Honor System.
+# 
+# Jason Qiu
+# 2021-12-02
 # 21fa-cs115bc
 #
 # lab13.py
