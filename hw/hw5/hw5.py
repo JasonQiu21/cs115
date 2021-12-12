@@ -53,7 +53,7 @@ def mset(n):
             x = scale(col, width, -2., 1.)
             y = scale(row, height, -1.,1.)
             c = x+y*1j
-            if inMSet(c, 25):
+            if inMSet(c, n):
                 # print(c)
                 image.plotPoint(col,row)
     image.saveFile()
